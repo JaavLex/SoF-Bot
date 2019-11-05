@@ -18,7 +18,7 @@ module.exports = {
       if (args[0] == "MP5") {
         d.table.Weapon = 1
         utils.putData(d)
-        message.channel.send(`Vous avez ramassé une ${}`)
+        message.channel.send(`Vous avez ramassé une`)
       }
     }
   }
