@@ -1,10 +1,14 @@
 {
-  "0": {
-    "Name": "désarmé",
+  "table": [
+  {
+    "Id":0,
+    "Name":"désarmé",
     "Mag":0
   },
-  "1": {
-    "Name": "H&K MP5A1",
+  {
+    "Id":1,
+    "Name":"H&K MP5A1",
     "Mag":30
   }
+  ]
 }

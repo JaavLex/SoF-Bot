@@ -2,11 +2,11 @@ const { RichEmbed } = require("discord.js");
 const utils = require('../../utils.js')
 
 module.exports = {
-  name: "pickw",
-  aliases: ["p"],
+  name: "dropw",
+  aliases: ["d"],
   category: "shooting-mechanics",
-  description: "shoot on someone, or something",
-  usage: "~pickw <weapon>",
+  description: "Drop your weapon",
+  usage: "~dropw <weapon>",
   run: async (bot,message,args) => {
     d = await utils.readData()
     e = await utils.readWeap()
@@ -14,13 +14,13 @@ module.exports = {
     console.log(utils.readWeap())
     console.log(d.table.jam)
 
-    if (args[0] && !args[1]) {
-      if (args[0] == "MP5") {
-        d.table.Weapon = 1
-        d.table.Mag = e.table[1].Mag
+    if (!args[0] && d.table.Weapon != 0) {
+        message.channel.send(`Vous lachez votre ${e.table[d.table.Weapon].Name}`)
+        d.table.Weapon = 0
+        d.table.Mag = 0
         await utils.putData(d)
-        message.channel.send(`Vous avez ramassé une ${e.table[1].Name}`)
-      }
+    } else {
+      message.channel.send(`Vous êtes déjà désarmé!`)
     }
   }
 }
