@@ -5,21 +5,25 @@ module.exports = {
   name: "pickw",
   aliases: ["p"],
   category: "shooting-mechanics",
-  description: "shoot on someone, or something",
+  description: "Pick up weapon",
   usage: "~pickw <weapon>",
   run: async (bot,message,args) => {
     d = await utils.readData()
     e = await utils.readWeap()
+    var uid = "a" + message.author.id
     console.log(utils.readData())
     console.log(utils.readWeap())
-    console.log(d.table.jam)
+    console.log(d[uid].jam)
 
     if (args[0] && !args[1]) {
       if (args[0] == "MP5") {
-        d.table.Weapon = 1
-        d.table.Mag = e.table[1].Mag
+
+        d[uid].Weapon = 1
+        d[uid].Mag = e.table[1].Mag
         await utils.putData(d)
-        message.channel.send(`Vous avez ramassé une ${e.table[1].Name}`)
+        const msg1 = new RichEmbed()
+        .setTitle(`Vous avez ramassé une ${e.table[1].Name}`)
+        message.channel.send(msg1)
       }
     }
   }

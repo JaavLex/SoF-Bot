@@ -20,8 +20,8 @@ function getAll(client, message) {
   const embed = new RichEmbed()
   .setColor("#32CD32")
   .setTitle("**Command list :**")
-  .setFooter("Type ++help [commandname] to have more info on a specific command")
-  .setThumbnail("https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/1ad2e474538729.5c361fd42e9a6.png")
+  .setFooter("Type ~help [commandname] to have more info on a specific command")
+  .setThumbnail("http://prod.cloud.rockstargames.com/crews/sc/9018/7471459/publish/emblems/77fabe97530898dcde3178def35477d2a40d8c50_512.png")
   .setTimestamp()
 
   const commands = (category) => {

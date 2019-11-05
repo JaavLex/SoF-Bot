@@ -10,33 +10,81 @@ module.exports = {
   run: async (bot,message,args) => {
     d = await utils.readData()
     console.log(utils.readData())
-    console.log(d.table.jam)
-    var hitchance = (Math.floor(Math.random() * 10) + 2);
-    var jamchance = (Math.floor(Math.random() * 10) + 1);
 
-    async function AmmoCount(){
-      if (d.table.Mag > 0){
-        d.table.Mag = d.table.Mag - 1
+    var hitchance = (Math.floor(Math.random() * 99) + 1);
+    var jamchance = (Math.floor(Math.random() * 90) + 10);
+    var uid = "a" + message.author.id
+    console.log(uid)
+   async function AmmoCount(){
+      //console.log("hello toto")
+      //var uid = "a172317689233014784"
+      //debugger
+      //console.log(d.uid.Mag)
+      if (d[uid].Mag > 0){
+        d[uid].Mag = d[uid].Mag - 1
+        d[uid].jamchance = d[uid].jamchance + 0.2
         await utils.putData(d)
       }
     }
 
-    if (args[0] && !args[1] && d.table.Weapon != 0) {
-      if (hitchance > 6 && jamchance < 9 && d.table.jam == false && d.table.Mag > 0) {
+    function sleep(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+
+
+    if (args[0] && !args[1] && d[uid].Weapon != 0) {
+      if (hitchance > d[uid].P && jamchance > d[uid].jamchance && d[uid].jam == false && d[uid].Mag > 0) {
         AmmoCount()
-        message.channel.send(`Touché! ${hitchance}`)
-      } else if (hitchance < 6 && d.table.jam == false && d.table.Mag > 0){
+        const msg1 = new RichEmbed()
+        .setTitle(`*BAM*`)
+        .setImage("https://im4.ezgif.com/tmp/ezgif-4-8aa7b52532dc.gif")
+
+        const msg = await message.channel.send(msg1)
+
+        await sleep(700)
+
+        const msg2 = new RichEmbed()
+        .setTitle(`Touché!`)
+        .setImage("https://st.depositphotos.com/1434993/3064/i/950/depositphotos_30644551-stock-photo-shoot-target-hit-the-heart.jpg")
+
+        msg.edit(msg2)
+      } else if (hitchance < d[uid].P && jamchance > d[uid].jamchance && d[uid].jam == false && d[uid].Mag > 0){
         AmmoCount()
-        message.channel.send(`Raté... ${hitchance}`)
-      } else if (jamchance > 9 || d.table.jam == true) {
-        d.table.jam = true
+        const msg1 = new RichEmbed()
+        .setTitle(`*BAM*`)
+        .setImage("https://im4.ezgif.com/tmp/ezgif-4-8aa7b52532dc.gif")
+
+        const msg = await message.channel.send(msg1)
+
+        await sleep(700)
+
+        const msg2 = new RichEmbed()
+        .setTitle(`Raté...`)
+        .setImage("https://media.istockphoto.com/photos/target-missed-picture-id166156803")
+
+        msg.edit(msg2)
+      } else if (jamchance < d[uid].jamchance || d[uid].jam == true) {
+        d[uid].jam = true
         utils.putData(d)
-        message.channel.send(`Votre arme est enrayée`)
-      } else if (d.table.Mag < 1) {
-        message.channel.send(`*Clic* Votre arme est vide`)
+
+        const msg1 = new RichEmbed()
+        .setTitle("Votre arme est enrayée")
+        .setImage("https://cdn8.bigcommerce.com/s-g64i9l/product_images/uploaded_images/bolt-override-jam.jpg")
+
+        message.channel.send(msg1)
+      } else if (d[uid].Mag < 1) {
+        const msg1 = new RichEmbed()
+        .setTitle("*Clic*")
+        .setImage("https://www.range365.com/resizer/lknnQzidbuKHl40S9JGWQqi3pDA=/760x506/arc-anglerfish-arc2-prod-bonnier.s3.amazonaws.com/public/4VQORSTASNQJJDIC2LKYBIXNZM.gif")
+
+        message.channel.send(msg1)
       }
-    } else if (d.table.Weapon = 0) {
-      message.channel.send(`Tu n'as pas d'arme!!`)
+    } else if (d[uid].Weapon = 0) {
+      const msg1 = new RichEmbed()
+      .setTitle("Tu n'as pas d'arme!!")
+
+      message.channel.send(msg1)
     }
   }
 }

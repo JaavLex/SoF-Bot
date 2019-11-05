@@ -1,16 +1,15 @@
 {
-  "table": {
-    "Id": "172317689233014784",
+  "a172317689233014784": {
     "RPname": "Alex Brant",
     "Weapon": 1,
-    "Mag": 0,
+    "Mag": 30,
     "E": 3,
     "C": 6,
     "S": 9,
     "P": 40,
     "RC": true,
     "jam": false,
-    "jamchance": 90,
+    "jamchance": -88.39999999999995,
     "kevlar": 0,
     "health": "healthy"
   }

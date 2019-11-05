@@ -6,33 +6,38 @@ module.exports = {
   name: "roll",
   aliases: ["r"],
   category: "shooting-mechanics",
-  description: "shoot on someone, or something",
-  usage: "~roll",
+  description: "roll a dice",
+  usage: "~roll <e|s|c>",
   run: async (bot,message,args) => {
     var d = await utils.readData()
     var roll = (Math.floor(Math.random() * 10) + 1);
     var str = ""
     var test
-    console.log(roll, d.table.E, d.table.RPname)
+    var uid = "a" + message.author.id
+    console.log(roll, d[uid].E, d[uid].RPname)
 
     function Roll(str, test)
     {
       if (args[0] == "e") {
         str = "d'endurance"
-        test = d.table.E
+        test = d[uid].E
       } else if (args[0] == "s") {
         str = "de force"
-        test = d.table.S
+        test = d[uid].S
       } else if (args[0] == "c") {
         str = "de charisme"
-        test = d.table.C
+        test = d[uid].C
       }
 
       if (test >= roll)
       {
-        message.channel.send(`${d.table.RPname} a réussi son jet ${str}`)
+        const msg1 = new RichEmbed()
+        .setTitle(`${d[uid].RPname} a réussi son jet ${str}`)
+        message.channel.send(msg1)
       } else {
-        message.channel.send(`${d.table.RPname} a raté son jet ${str}...`)
+        const msg1 = new RichEmbed()
+        .setTitle(`${d[uid].RPname} a raté son jet ${str}...`)
+        cmessage.channel.send(msg1)
       }
     }
     if (args[0] && !args[1]) {

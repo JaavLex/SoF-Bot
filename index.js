@@ -26,8 +26,8 @@ client.on("ready", () => {
     client.user.setPresence({
         status: "online",
         game: {
-            name: "Use ++help to see the list of commands, and ++help [commandname] to have more info on a specific command",
-            type: "WATCHING"
+            name: "Bravo-six going dark... ~help for more info",
+            type: "PLAYING"
         }
     })
 });
