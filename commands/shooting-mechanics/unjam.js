@@ -29,8 +29,6 @@ module.exports = {
       const msg = await message.channel.send(msg1)
 
       await sleep(4000)
-      d[uid].jamchance = d[uid].jamchance - 30
-      await utils.putData(d)
 
       const msg2 = new RichEmbed()
       .setTitle(`Vous avez désenrayé votre ${e.table[d[uid].Weapon].Name}`)

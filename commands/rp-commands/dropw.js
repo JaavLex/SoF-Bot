@@ -4,7 +4,7 @@ const utils = require('../../utils.js')
 module.exports = {
   name: "dropw",
   aliases: ["d"],
-  category: "shooting-mechanics",
+  category: "rp-commands",
   description: "Drop your weapon",
   usage: "~dropw",
   run: async (bot,message,args) => {

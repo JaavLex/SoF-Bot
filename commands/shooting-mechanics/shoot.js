@@ -9,6 +9,7 @@ module.exports = {
   usage: "~shoot <target>",
   run: async (bot,message,args) => {
     d = await utils.readData()
+    e = await utils.readWeap()
     console.log(utils.readData())
 
     var hitchance = (Math.floor(Math.random() * 99) + 1);
@@ -22,11 +23,17 @@ module.exports = {
       //console.log(d.uid.Mag)
       if (d[uid].Mag > 0){
         d[uid].Mag = d[uid].Mag - 1
-        d[uid].jamchance = d[uid].jamchance + 0.2
+        d[uid].jamchance = Math.floor((d[uid].jamchance + 0.2) * 100) / 100
+        await utils.putData(d)
+      }
+      if (d[uid].Mag < e.table[d[uid].Weapon].Mag && d[uid].Mag > 0) {
+        d[uid].MagState = "entamé"
+        await utils.putData(d)
+      } else if (d[uid].Mag == 0) {
+        d[uid].MagState = "vide"
         await utils.putData(d)
       }
     }
-
     function sleep(ms) {
       return new Promise(resolve => setTimeout(resolve, ms));
     }
@@ -38,7 +45,7 @@ module.exports = {
         AmmoCount()
         const msg1 = new RichEmbed()
         .setTitle(`*BAM*`)
-        .setImage("https://im4.ezgif.com/tmp/ezgif-4-8aa7b52532dc.gif")
+        .setImage("http://bestanimations.com/Military/Weapons/gun-animated-gif-4.gif")
 
         const msg = await message.channel.send(msg1)
 
@@ -53,7 +60,7 @@ module.exports = {
         AmmoCount()
         const msg1 = new RichEmbed()
         .setTitle(`*BAM*`)
-        .setImage("https://im4.ezgif.com/tmp/ezgif-4-8aa7b52532dc.gif")
+        .setImage("http://bestanimations.com/Military/Weapons/gun-animated-gif-4.gif")
 
         const msg = await message.channel.send(msg1)
 

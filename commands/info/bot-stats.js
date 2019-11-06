@@ -12,11 +12,11 @@ module.exports = {
       .addField("Servercount :", `**${client.guilds.size}**`, true)
       .addField("Usercount :", `**${client.users.size}**`, true)
       .addField("Text channels :", `**${client.channels.filter(c => c.type === 'text').size}**`, true)
-      .addField("Bot Version :" , "v1.1.3")
+      .addField("Bot Version :" , "v0.1")
       .addBlankField()
       .addField("Bot creator info :", `TacticsCH#2795`, true)
       .addField("GitHub :", `https://github.com/tacticsch/`, true)
-      .setThumbnail("https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/1ad2e474538729.5c361fd42e9a6.png")
+      .setThumbnail("http://prod.cloud.rockstargames.com/crews/sc/9018/7471459/publish/emblems/77fabe97530898dcde3178def35477d2a40d8c50_512.png")
       .setTimestamp()
     msg.edit(newmsg);
   }

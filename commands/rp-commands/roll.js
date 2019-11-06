@@ -5,7 +5,7 @@ const utils = require('../../utils.js')
 module.exports = {
   name: "roll",
   aliases: ["r"],
-  category: "shooting-mechanics",
+  category: "rp-commands",
   description: "roll a dice",
   usage: "~roll <e|s|c>",
   run: async (bot,message,args) => {
@@ -27,6 +27,9 @@ module.exports = {
       } else if (args[0] == "c") {
         str = "de charisme"
         test = d[uid].C
+      } else if (args[0] == "p") {
+        str = "de perception"
+        test = d[uid].Ps
       }
 
       if (test >= roll)
@@ -47,8 +50,8 @@ module.exports = {
         Roll(str, test)
       } else if (args[0] == "c"){
         Roll(str, test)
-      } else {
-
+      } else if (args[0] == "p"){
+        Roll(str, test)
       }
 
     }

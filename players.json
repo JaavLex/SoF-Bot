@@ -1,16 +1,20 @@
 {
   "a172317689233014784": {
     "RPname": "Alex Brant",
+    "Desc": "",
     "Weapon": 1,
     "Mag": 30,
+    "MagState": "rempli",
     "E": 3,
     "C": 6,
     "S": 9,
+    "Ps": 4,
     "P": 40,
     "RC": true,
     "jam": false,
-    "jamchance": -88.39999999999995,
+    "jamchance": 32.2,
     "kevlar": 0,
+    "Helm": true,
     "health": "healthy"
   }
 }
