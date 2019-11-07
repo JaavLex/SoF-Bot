@@ -15,6 +15,7 @@ module.exports = {
     console.log(utils.readWeap())
     console.log(d[uid].jam)
 
+    // Sets d.Weapon to the Id of the desired weapon
     if (args[0] && !args[1]) {
       if (args[0] == "MP5") {
 

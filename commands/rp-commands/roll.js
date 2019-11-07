@@ -7,7 +7,7 @@ module.exports = {
   aliases: ["r"],
   category: "rp-commands",
   description: "roll a dice",
-  usage: "~roll <e|s|c>",
+  usage: "~roll <e|s|c|p>",
   run: async (bot,message,args) => {
     var d = await utils.readData()
     var roll = (Math.floor(Math.random() * 10) + 1);
@@ -18,6 +18,7 @@ module.exports = {
 
     function Roll(str, test)
     {
+      // Gives stats and chances end of string
       if (args[0] == "e") {
         str = "d'endurance"
         test = d[uid].E
@@ -34,13 +35,15 @@ module.exports = {
 
       if (test >= roll)
       {
+        // If roll is won
         const msg1 = new RichEmbed()
         .setTitle(`${d[uid].RPname} a réussi son jet ${str}`)
         message.channel.send(msg1)
       } else {
+        // If roll is lost
         const msg1 = new RichEmbed()
         .setTitle(`${d[uid].RPname} a raté son jet ${str}...`)
-        cmessage.channel.send(msg1)
+        message.channel.send(msg1)
       }
     }
     if (args[0] && !args[1]) {

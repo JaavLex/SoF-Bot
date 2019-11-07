@@ -18,6 +18,7 @@ module.exports = {
       return new Promise(resolve => setTimeout(resolve, ms));
     }
 
+    // Shows info from d.Mag
     if (!args[0] && d[uid].Weapon != 0) {
 
         const msg1 = new RichEmbed()
@@ -41,6 +42,7 @@ module.exports = {
 
         msg.edit(msg3)
     } else if (d[uid].Weapon == 0) {
+      // Rejects if unarmed
       const msg1 = new RichEmbed()
       .setTitle("Vous n'avez pas d'arme...")
       message.channel.send(msg1)

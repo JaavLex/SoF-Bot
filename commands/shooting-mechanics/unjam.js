@@ -9,10 +9,12 @@ module.exports = {
   description: "Unjam your gun",
   usage: "~unjam",
   run: async (bot,message,args) => {
+    // Getting necessary infos
     var d = await utils.readData()
     var e = await utils.readWeap()
     var uid = "a" + message.author.id
 
+    // Turns jam = true to false and sends .gif imagery to represent the action
     if (d[uid].jam == true)
     {
       d[uid].jam = false
@@ -35,6 +37,7 @@ module.exports = {
 
       msg.edit(msg2)
     } else {
+      // Can't do the command if weapon is not jammed
       const msg1 = new RichEmbed()
       .setTitle(`Votre arme n'est pas enrayée`)
       message.channel.send(msg1)

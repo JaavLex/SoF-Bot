@@ -12,20 +12,21 @@ module.exports = {
     e = await utils.readWeap()
     console.log(utils.readData())
 
+    // Rolls
     var hitchance = (Math.floor(Math.random() * 99) + 1);
     var jamchance = (Math.floor(Math.random() * 90) + 10);
+    // Player ID
     var uid = "a" + message.author.id
     console.log(uid)
+    // Round counter + weapon gets dirty with shots
    async function AmmoCount(){
-      //console.log("hello toto")
-      //var uid = "a172317689233014784"
-      //debugger
-      //console.log(d.uid.Mag)
+     // Adds jamchance each shots
       if (d[uid].Mag > 0){
         d[uid].Mag = d[uid].Mag - 1
         d[uid].jamchance = Math.floor((d[uid].jamchance + 0.2) * 100) / 100
         await utils.putData(d)
       }
+      // Removes bullet from the mag each shots
       if (d[uid].Mag < e.table[d[uid].Weapon].Mag && d[uid].Mag > 0) {
         d[uid].MagState = "entamé"
         await utils.putData(d)
@@ -42,6 +43,7 @@ module.exports = {
 
     if (args[0] && !args[1] && d[uid].Weapon != 0) {
       if (hitchance > d[uid].P && jamchance > d[uid].jamchance && d[uid].jam == false && d[uid].Mag > 0) {
+        // Action if you hit your shot
         AmmoCount()
         const msg1 = new RichEmbed()
         .setTitle(`*BAM*`)
@@ -57,6 +59,7 @@ module.exports = {
 
         msg.edit(msg2)
       } else if (hitchance < d[uid].P && jamchance > d[uid].jamchance && d[uid].jam == false && d[uid].Mag > 0){
+        // Action when you miss your shot
         AmmoCount()
         const msg1 = new RichEmbed()
         .setTitle(`*BAM*`)
@@ -72,6 +75,8 @@ module.exports = {
 
         msg.edit(msg2)
       } else if (jamchance < d[uid].jamchance || d[uid].jam == true) {
+
+        // Jams weapon if roll is higher than your jamming chance
         d[uid].jam = true
         utils.putData(d)
 
@@ -81,6 +86,8 @@ module.exports = {
 
         message.channel.send(msg1)
       } else if (d[uid].Mag < 1) {
+
+        // Action when weapon is empty
         const msg1 = new RichEmbed()
         .setTitle("*Clic*")
         .setImage("https://www.range365.com/resizer/lknnQzidbuKHl40S9JGWQqi3pDA=/760x506/arc-anglerfish-arc2-prod-bonnier.s3.amazonaws.com/public/4VQORSTASNQJJDIC2LKYBIXNZM.gif")
@@ -88,6 +95,8 @@ module.exports = {
         message.channel.send(msg1)
       }
     } else if (d[uid].Weapon = 0) {
+
+      // Rejects command if player doesn't have weapon
       const msg1 = new RichEmbed()
       .setTitle("Tu n'as pas d'arme!!")
 

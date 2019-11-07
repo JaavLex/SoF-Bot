@@ -4,7 +4,7 @@
     "Desc": "",
     "Weapon": 1,
     "Mag": 30,
-    "MagState": "rempli",
+    "MagState": "entamé",
     "E": 3,
     "C": 6,
     "S": 9,
@@ -12,9 +12,27 @@
     "P": 40,
     "RC": true,
     "jam": false,
-    "jamchance": 32.2,
+    "jamchance": 31.4,
     "kevlar": 0,
     "Helm": true,
+    "health": "healthy"
+  },
+  "a641976718227275797": {
+    "RPname": "",
+    "Desc": "",
+    "Weapon": 0,
+    "Mag": 0,
+    "MagState": "full",
+    "E": 0,
+    "C": 0,
+    "S": 0,
+    "Ps": 0,
+    "P": 0,
+    "RC": false,
+    "jam": false,
+    "jamchance": 0,
+    "kevlar": 0,
+    "Helm": false,
     "health": "healthy"
   }
 }

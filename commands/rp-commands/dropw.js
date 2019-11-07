@@ -15,6 +15,7 @@ module.exports = {
     console.log(utils.readWeap())
     console.log(d[uid].jam)
 
+    // Sets d.Weapon to 0
     if (!args[0] && d[uid].Weapon != 0) {
         const msg1 = new RichEmbed()
         .setTitle(`Vous lachez votre ${e.table[d[uid].Weapon].Name}`)
@@ -23,6 +24,7 @@ module.exports = {
         d[uid].Mag = 0
         await utils.putData(d)
     } else {
+      // Rejects if unarmed
       const msg1 = new RichEmbed()
       .setTitle(`Vous êtes déjà désarmé!`)
       message.channel.send(msg1)

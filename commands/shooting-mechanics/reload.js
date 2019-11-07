@@ -19,6 +19,8 @@ module.exports = {
       return new Promise(resolve => setTimeout(resolve, ms));
     }
 
+
+    // Sets mag = 0 to the maximum capacity of the weapon type
     if (!args[0] && d[uid].Weapon != 0) {
         const msg1 = new RichEmbed()
         .setImage("https://im4.ezgif.com/tmp/ezgif-4-132cd2b4b05f.gif")
