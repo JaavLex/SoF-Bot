@@ -69,7 +69,7 @@ module.exports = {
     if (args[0] && !args[1] && d[uid].Weapon != 0 && d[uid].ACD == false) {
       if (hitchance > d[uid].P && jamchance > d[uid].jamchance && d[uid].jam == false && d[uid].Mag > 0) {
         // Action if you hit your shot
-        //const user = getUserFromMention(args[0])
+        const user = message.mentions.users.first().id
 
         var whit = (Math.floor(Math.random() * 99) + 1);
 
@@ -98,12 +98,14 @@ module.exports = {
             target = "un ennemi! Vous l'avez blessé."
           }
 
-        }
-        // else if (user) {
-        //   var ouid = "a" + user.id
+      //  } else {
+      //    target = "WORK IN PROGRESS"
+      //  }
+        } else if (user) {
+           var ouid = "a" + user
 
-        //   target = d[ouid].RPname
-        // }
+           target = d[ouid].RPname
+         }
 
         HitorMiss("Vous avez touché, votre tir était sur ", target, img)
 
@@ -119,11 +121,15 @@ module.exports = {
         {
           target = "un ennemi! Vous l'avez raté!"
 
-        } else if (user) {
-          var ouid = "a" + user.id
-
-          target = d[ouid].RPname + "! Vous l'avez raté!"
+        } else {
+          target = "WORK IN PROGRESS"
         }
+
+        // else if (user) {
+        //   var ouid = "a" + user.id
+
+        //   target = d[ouid].RPname + "! Vous l'avez raté!"
+        // }
         HitorMiss("Votre tir était sur ", target, img)
       } else if (jamchance < d[uid].jamchance || d[uid].jam == true && d[uid].ACD == false) {
 
