@@ -24,7 +24,9 @@ module.exports = {
 
 
     // Sets mag = 0 to the maximum capacity of the weapon type
-    if (!args[0] && d[uid].Weapon != 0) {
+    if (!args[0] && d[uid].Weapon != 0 && d[uid].ACD == false) {
+        d[uid].ACD = true
+        await utils.putData(d)
         const msg1 = new RichEmbed()
         .setImage("https://i.ibb.co/Cz81Ykb/Reload.gif")
 
@@ -39,7 +41,10 @@ module.exports = {
 
         d[uid].Mag = e.table[d[uid].Weapon].Mag
         d[uid].MagState = "rempli"
+        d[uid].ACD = false
         await utils.putData(d)
+    } else if (d[uid].ACD == true) {
+
     } else {
       const msg1 = new RichEmbed()
       .setTitle(`Vous n'avez pas d'arme!`)

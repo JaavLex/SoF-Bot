@@ -19,7 +19,10 @@ module.exports = {
     }
 
     // Shows info from d.Mag
-    if (!args[0] && d[uid].Weapon != 0) {
+    if (!args[0] && d[uid].Weapon != 0 && d[uid].ACD == false) {
+
+        d[uid].ACD = true
+        await utils.putData(d)
 
         const msg1 = new RichEmbed()
         .setTitle("Vous enlevez le magasin de votre arme et l'inspectez...")
@@ -40,12 +43,17 @@ module.exports = {
         const msg3 = new RichEmbed()
         .setTitle(`Le chargeur est ${d[uid].MagState}`)
 
+        d[uid].ACD = false
+        await utils.putData(d)
+
         msg.edit(msg3)
     } else if (d[uid].Weapon == 0) {
       // Rejects if unarmed
       const msg1 = new RichEmbed()
       .setTitle("Vous n'avez pas d'arme...")
       message.channel.send(msg1)
+    } else if (d[uid].ACD == true) {
+
     }
   }
 }

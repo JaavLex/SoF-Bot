@@ -15,8 +15,9 @@ module.exports = {
     var uid = "a" + message.author.id
 
     // Turns jam = true to false and sends .gif imagery to represent the action
-    if (d[uid].jam == true)
+    if (d[uid].jam == true && d[uid].ACD == false)
     {
+      d[uid].ACD = true
       d[uid].jam = false
       await utils.putData(d)
 
@@ -35,7 +36,12 @@ module.exports = {
       const msg2 = new RichEmbed()
       .setTitle(`Vous avez désenrayé votre ${e.table[d[uid].Weapon].Name}`)
 
+      d[uid].ACD = false
+      await utils.putData(d)
+
       msg.edit(msg2)
+    } else if (d[uid].ACD == true) {
+
     } else {
       // Can't do the command if weapon is not jammed
       const msg1 = new RichEmbed()

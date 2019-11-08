@@ -62,6 +62,7 @@ client.on('guildMemberAdd', member => {
     var uid = "a" + member.id
 
     d[uid] = {
+    ACD: false,
     RPname: "",
     Desc: "",
     Weapon: 0,

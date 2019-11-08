@@ -13,8 +13,11 @@ module.exports = {
     console.log(utils.readData())
 
     // Rolls
+    var jc1 = (Math.floor(Math.random() * 90) + 10);
+    var jc2 = 100 - jc1
+
     var hitchance = (Math.floor(Math.random() * 99) + 1);
-    var jamchance = (Math.floor(Math.random() * 90) + 10);
+    var jamchance = (Math.floor(Math.random() * jc2) + jc1);
     // Player ID
     var uid = "a" + message.author.id
     console.log(uid)
@@ -40,9 +43,12 @@ module.exports = {
       await utils.putData(d)
     }
 
+    d[uid].ACD = true
+    await utils.putData(d)
+
     const msg1 = new RichEmbed()
-    .setTitle(`*BAM*`)
-    .setImage("")
+    .setTitle(`Vous visez et vous tirez!`)
+    .setImage("https://i.ibb.co/LCbFZwV/Shoot.gif")
 
     const msg = await message.channel.send(msg1)
 
@@ -50,17 +56,20 @@ module.exports = {
 
     const msg2 = new RichEmbed()
     .setTitle(str + target)
-    .setImage("")
+    .setImage(img)
+
+    d[uid].ACD = false
+    await utils.putData(d)
 
     msg.edit(msg2)
 
 
   }
 
-    if (args[0] && !args[1] && d[uid].Weapon != 0) {
+    if (args[0] && !args[1] && d[uid].Weapon != 0 && d[uid].ACD == false) {
       if (hitchance > d[uid].P && jamchance > d[uid].jamchance && d[uid].jam == false && d[uid].Mag > 0) {
         // Action if you hit your shot
-        const user = getUserFromMention(args[0])
+        //const user = getUserFromMention(args[0])
 
         var whit = (Math.floor(Math.random() * 99) + 1);
 
@@ -83,23 +92,24 @@ module.exports = {
 
         if (args[0] == "ennemy")
         {
-          if (hitid == 1 || hitif == 2) {
+          if (hitid == 1 || hitid == 2) {
             target = "un ennemi! Vous l'avez tué."
           } else if (hitid == 3) {
             target = "un ennemi! Vous l'avez blessé."
           }
 
-        } else if (user) {
-          var ouid = "a" + user.id
-
-          target = d[ouid].RPname
         }
+        // else if (user) {
+        //   var ouid = "a" + user.id
+
+        //   target = d[ouid].RPname
+        // }
 
         HitorMiss("Vous avez touché, votre tir était sur ", target, img)
 
 
 
-      } else if (hitchance < d[uid].P && jamchance > d[uid].jamchance && d[uid].jam == false && d[uid].Mag > 0){
+      } else if (hitchance < d[uid].P && jamchance > d[uid].jamchance && d[uid].jam == false && d[uid].Mag > 0 && d[uid].ACD == false){
         // Action if you miss your shot
         var target = ""
 
@@ -115,7 +125,7 @@ module.exports = {
           target = d[ouid].RPname + "! Vous l'avez raté!"
         }
         HitorMiss("Votre tir était sur ", target, img)
-      } else if (jamchance < d[uid].jamchance || d[uid].jam == true) {
+      } else if (jamchance < d[uid].jamchance || d[uid].jam == true && d[uid].ACD == false) {
 
         // Jams weapon if roll is higher than your jamming chance
         d[uid].jam = true
@@ -126,7 +136,7 @@ module.exports = {
         .setImage("https://i.ibb.co/Kh0XVZV/Jam.gif")
 
         message.channel.send(msg1)
-      } else if (d[uid].Mag < 1) {
+      } else if (d[uid].Mag < 1 && d[uid].ACD == false) {
 
         // Action when weapon is empty
         const msg1 = new RichEmbed()
@@ -135,13 +145,15 @@ module.exports = {
 
         message.channel.send(msg1)
       }
-    } else if (d[uid].Weapon = 0) {
+    } else if (d[uid].Weapon = 0 && d[uid].ACD == false) {
 
       // Rejects command if player doesn't have weapon
       const msg1 = new RichEmbed()
       .setTitle("Tu n'as pas d'arme!!")
 
       message.channel.send(msg1)
+    } else if (d[uid].ACD == true) {
+
     }
   }
 }
