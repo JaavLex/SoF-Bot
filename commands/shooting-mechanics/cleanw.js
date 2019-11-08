@@ -24,7 +24,7 @@ module.exports = {
 
         const msg1 = new RichEmbed()
         .setTitle("Vous démontez votre arme et nettoyez toute les pièces...")
-        .setImage("https://media.giphy.com/media/augSlqlrfrvLG/giphy.gif")
+        .setImage("")
 
         const msg = await message.channel.send(msg1)
 

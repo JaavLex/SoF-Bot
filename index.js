@@ -77,7 +77,9 @@ client.on('guildMemberAdd', member => {
     jamchance: 0,
     kevlar: 0,
     Helm: false,
-    health: "healthy"
+    Head: 2,
+    Body: 7,
+    Legs: 4
     }
 
     await utils.putData(d)
@@ -92,7 +94,6 @@ client.on('guildMemberRemove', member => {
     e = await utils.readWeap()
 
     var uid = "a" + member.id
-
 
   delete d[uid]
 

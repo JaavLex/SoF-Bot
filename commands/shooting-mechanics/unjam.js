@@ -26,11 +26,11 @@ module.exports = {
 
       const msg1 = new RichEmbed()
       .setTitle("Vous êtes en train de désenrayer votre arme...")
-      .setImage("https://im4.ezgif.com/tmp/ezgif-4-2ad5d9ec16aa.gif")
+      .setImage("https://i.ibb.co/yhD6J38/Unjam.gif")
 
       const msg = await message.channel.send(msg1)
 
-      await sleep(4000)
+      await sleep(10000)
 
       const msg2 = new RichEmbed()
       .setTitle(`Vous avez désenrayé votre ${e.table[d[uid].Weapon].Name}`)

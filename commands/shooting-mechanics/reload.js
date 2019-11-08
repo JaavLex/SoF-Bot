@@ -8,9 +8,12 @@ module.exports = {
   description: "Reload your weapon",
   usage: "~reload",
   run: async (bot,message,args) => {
+
     d = await utils.readData()
     e = await utils.readWeap()
+
     var uid = "a" + message.author.id
+
     console.log(utils.readData())
     console.log(utils.readWeap())
     console.log(d[uid].jam)
@@ -23,7 +26,7 @@ module.exports = {
     // Sets mag = 0 to the maximum capacity of the weapon type
     if (!args[0] && d[uid].Weapon != 0) {
         const msg1 = new RichEmbed()
-        .setImage("https://im4.ezgif.com/tmp/ezgif-4-132cd2b4b05f.gif")
+        .setImage("https://i.ibb.co/Cz81Ykb/Reload.gif")
 
         const msg = await message.channel.send(msg1)
 
