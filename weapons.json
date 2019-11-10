@@ -3,17 +3,20 @@
     {
       "Id": 0,
       "Name": "désarmé",
-      "Mag": 0
+      "Mag": 0,
+      "Penetration": 0
     },
     {
       "Id": 1,
       "Name": "H&K MP5A1",
-      "Mag": 30
+      "Mag": 30,
+      "Penetration": 2
     },
     {
       "Id": 2,
       "Name": "Glock 17 Gen. 4",
-      "Mag": 17
+      "Mag": 17,
+      "Penetration": 1
     }
   ]
 }

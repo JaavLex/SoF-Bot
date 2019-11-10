@@ -4,7 +4,7 @@
     "RPname": "Alex Brant",
     "Desc": "",
     "Weapon": 1,
-    "Mag": 28,
+    "Mag": 18,
     "MagState": "entamé",
     "E": 3,
     "C": 6,
@@ -13,7 +13,7 @@
     "P": 40,
     "RC": true,
     "jam": false,
-    "jamchance": 17.11,
+    "jamchance": 19.07,
     "kevlar": 0,
     "Helm": true,
     "Head": 2,
@@ -43,7 +43,7 @@
   },
   "a642432969935683604": {
     "ACD": false,
-    "RPname": "TEST",
+    "RPname": "Sgt. Brandon Herrera",
     "Desc": "",
     "Weapon": 0,
     "Mag": 0,
@@ -56,10 +56,10 @@
     "RC": false,
     "jam": false,
     "jamchance": 0,
-    "kevlar": 0,
-    "Helm": false,
-    "Head": 2,
+    "kevlar": 2,
+    "Helm": true,
+    "Head": 1,
     "Body": 7,
-    "Legs": 4
+    "Legs": 2
   }
 }
