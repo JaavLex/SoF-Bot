@@ -4,19 +4,41 @@
       "Id": 0,
       "Name": "désarmé",
       "Mag": 0,
-      "Penetration": 0
+      "Penetration": 0,
+      "Type": "null",
+      "Caliber": "null",
+      "Image":  "null",
+      "Range": "null"
     },
     {
       "Id": 1,
       "Name": "H&K MP5A1",
       "Mag": 30,
-      "Penetration": 2
+      "Penetration": 1,
+      "Type": "SMG",
+      "Caliber": "9x19mm Parabellum",
+      "Image":  "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Heckler_%26_Koch_MP5-1.jpg/1200px-Heckler_%26_Koch_MP5-1.jpg",
+      "Range": "200m"
     },
     {
       "Id": 2,
+      "Name": "Colt M4A1",
+      "Mag": 30,
+      "Penetration": 2,
+      "Type": "Carabine",
+      "Caliber": "5,56x45 NATO",
+      "Image":  "https://i.ytimg.com/vi/hR83lCPAQ1g/maxresdefault.jpg",
+      "Range": "500m"
+    },
+    {
+      "Id": 3,
       "Name": "Glock 17 Gen. 4",
       "Mag": 17,
-      "Penetration": 1
+      "Penetration": 1,
+      "Type": "Arme de poing",
+      "Caliber": "9x19mm Parabellum",
+      "Image":  "https://www.sportsmansoutdoorsuperstore.com/prodimages/15641-DEFAULT-l.jpg",
+      "Range": "50m"
     }
   ]
 }
