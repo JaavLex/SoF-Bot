@@ -66,6 +66,7 @@ client.on('guildMemberAdd', member => {
     RPname: "",
     Desc: "",
     Weapon: 0,
+    Fullauto: false,
     Mag: 0,
     MagState: "full",
     E: 0,
@@ -80,7 +81,8 @@ client.on('guildMemberAdd', member => {
     Helm: false,
     Head: 2,
     Body: 7,
-    Legs: 4
+    Legs: 4,
+    Alive: true,
     }
 
     await utils.putData(d)
