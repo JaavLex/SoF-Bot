@@ -28,7 +28,7 @@ module.exports = {
         d[uid].ACD = true
         await utils.putData(d)
         const msg1 = new RichEmbed()
-        .setImage("https://i.ibb.co/Cz81Ykb/Reload.gif")
+        .setImage(e.table[d[uid].Weapon].Reload)
 
         const msg = await message.channel.send(msg1)
 

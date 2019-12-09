@@ -64,8 +64,12 @@ client.on('guildMemberAdd', member => {
     d[uid] = {
     ACD: false,
     RPname: "",
+    Rank: "",
+    Picture:"",
     Desc: "",
     Weapon: 0,
+    Weapon2: 0,
+    Weapon3: 0,
     Fullauto: false,
     Mag: 0,
     MagState: "full",
@@ -83,6 +87,7 @@ client.on('guildMemberAdd', member => {
     Body: 7,
     Legs: 4,
     Alive: true,
+    cpup: false
     }
 
     await utils.putData(d)

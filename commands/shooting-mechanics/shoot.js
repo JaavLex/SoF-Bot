@@ -27,7 +27,11 @@ module.exports = {
 
     if (d[uid].Fullauto == true)
     {
-      hitchance = hitchance - 10
+      if (d[uid].RC == true) {
+        hitchance = hitchance - 10
+      } else {
+        hitchance = hitchance - 20
+      }
       hitmult = 2
     }
 
@@ -37,10 +41,12 @@ module.exports = {
 
     if (d[uid].Fullauto == true)
     {
-      for (var i = 0; i <= 5; i++)
+      var nbb = Math.floor(((Math.floor(Math.random() * 99) + 1) /2) /10);
+      var img1 = e.table[d[uid].Weapon].Shoot;
+      for (var i = 0; i <= nbb; i++)
       {
-        if (i >= d[uid].Mag) {
-          bullets++
+        if (i < d[uid].Mag) {
+          bullets++;
         } else {
 
         }
@@ -70,7 +76,7 @@ module.exports = {
 
     const msg1 = new RichEmbed()
     .setTitle(mess)
-    .setImage("https://i.ibb.co/LCbFZwV/Shoot.gif")
+    .setImage(img1)
 
     const msg = await message.channel.send(msg1)
 
@@ -231,7 +237,7 @@ module.exports = {
         // Action if you miss your shot
         var target = ""
 
-        const user = message.mentions.users.first().id
+        const usr = message.mentions.users.first()
 
         var img = "https://i.ibb.co/xSV7Pv7/Missed.jpg"
 
@@ -239,7 +245,8 @@ module.exports = {
         {
           target = "un ennemi! Vous l'avez raté!"
 
-        }  else if (user) {
+        }  else if (usr) {
+           const user = message.mentions.users.first().id
            var ouid = "a" + user
 
            target = d[ouid].RPname
@@ -273,7 +280,6 @@ module.exports = {
 
       message.channel.send(msg1)
     } else if (d[uid].ACD == true) {
-      console.log("tutu3")
       const msg1 = new RichEmbed()
       .setTitle("Vous êtes en train de faire une autre action...")
 

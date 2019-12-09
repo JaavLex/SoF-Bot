@@ -21,7 +21,7 @@ module.exports = {
       .addField(`Nom de l'arme :`, `${e.table[d[uid].Weapon].Name}`, true)
       .addField(`Calibre :`, `${e.table[d[uid].Weapon].Caliber}`, true)
       .addField(`Type de l'arme :`, `${e.table[d[uid].Weapon].Type}`, true)
-      .addField(`Contenance du charger :`, `${e.table[d[uid].Weapon].Mag}`, true)
+      .addField(`Contenance du chargeur :`, `${e.table[d[uid].Weapon].Mag}`, true)
       .addField(`Portée de l'arme :`, `${e.table[d[uid].Weapon].Range}`, true)
       .setTimestamp()
       .setFooter(`${e.table[d[uid].Weapon].Name}`);

@@ -6,10 +6,13 @@
       "Mag": 0,
       "Penetration": 0,
       "Type": "null",
+      "T": 0,
       "Caliber": "null",
       "Image":  "null",
       "Range": "null",
-      "Fullauto": false
+      "Fullauto": false,
+      "Reload": "",
+      "Shoot": ""
     },
     {
       "Id": 1,
@@ -17,10 +20,13 @@
       "Mag": 30,
       "Penetration": 1,
       "Type": "SMG",
+      "T": 1,
       "Caliber": "9x19mm Parabellum",
       "Image":  "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Heckler_%26_Koch_MP5-1.jpg/1200px-Heckler_%26_Koch_MP5-1.jpg",
       "Range": "200m",
-      "Fullauto": true
+      "Fullauto": true,
+      "Reload": "https://i.ibb.co/TgX95Fj/mp5r.gif",
+      "Shoot": "https://giffiles.alphacoders.com/903/90360.gif"
     },
     {
       "Id": 2,
@@ -28,10 +34,13 @@
       "Mag": 30,
       "Penetration": 2,
       "Type": "Carabine",
+      "T": 1,
       "Caliber": "5,56x45 NATO",
       "Image":  "https://i.ytimg.com/vi/hR83lCPAQ1g/maxresdefault.jpg",
       "Range": "500m",
-      "Fullauto": true
+      "Fullauto": true,
+      "Reload": "https://media.giphy.com/media/DTxQQPMuZuo00/giphy.gif",
+      "Shoot": "https://i.makeagif.com/media/5-19-2015/vFUPSy.gif"
     },
     {
       "Id": 3,
@@ -39,10 +48,55 @@
       "Mag": 17,
       "Penetration": 1,
       "Type": "Arme de poing",
+      "T": 2,
       "Caliber": "9x19mm Parabellum",
       "Image":  "https://www.sportsmansoutdoorsuperstore.com/prodimages/15641-DEFAULT-l.jpg",
       "Range": "50m",
-      "Fullauto": false
+      "Fullauto": false,
+      "Reload": "https://i.makeagif.com/media/8-08-2016/63IeO6.gif",
+      "Shoot": "https://thumbs.gfycat.com/RedInferiorArabianwildcat-size_restricted.gif"
+    },
+    {
+      "Id": 4,
+      "Name": "AK 74",
+      "Mag": 30,
+      "Penetration": 2,
+      "Type": "Fusil d'assaut",
+      "T": 1,
+      "Caliber": "7,69x39",
+      "Image":  "https://www.joefirearms.com/wp-content/uploads/2017/04/pix929532475.jpg",
+      "Range": "450m",
+      "Fullauto": true,
+      "Reload": "https://media.giphy.com/media/12mtzB7Xdt5iPm/giphy.gif",
+      "Shoot": "https://deathbeforecccp.files.wordpress.com/2014/01/ak-shooting-gif.gif"
+    },
+    {
+      "Id": 5,
+      "Name": "AKM",
+      "Mag": 30,
+      "Penetration": 2,
+      "Type": "Fusil d'assaut",
+      "T": 1,
+      "Caliber": "7,69x39",
+      "Image":  "https://static.turbosquid.com/Preview/2017/03/26__05_57_51/1.png9A7C9DB4-C763-4626-9119-DA10582875A1Zoom.jpg",
+      "Range": "400m",
+      "Fullauto": true,
+      "Reload": "https://i.makeagif.com/media/6-19-2016/ALaocj.gif",
+      "Shoot": "https://giffiles.alphacoders.com/900/90066.gif"
+    },
+    {
+      "Id": 6,
+      "Name": "Beretta M92FS",
+      "Mag": 17,
+      "Penetration": 1,
+      "Type": "Arme de poing",
+      "T": 2,
+      "Caliber": "9x19mm Parabellum",
+      "Image":  "https://www.cheaperthandirt.com/dw/image/v2/BDCK_PRD/on/demandware.static/-/Sites-ctd-master-catalog/default/dw236b41e1/large/7-gjs92f390_a.jpg?sw=800&sh=800",
+      "Range": "50m",
+      "Fullauto": false,
+      "Reload": "https://i.makeagif.com/media/8-08-2016/63IeO6.gif",
+      "Shoot": "https://i.ibb.co/Cz81Ykb/Reload.gif"
     }
   ]
 }

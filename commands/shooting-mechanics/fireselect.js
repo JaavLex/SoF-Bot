@@ -5,7 +5,7 @@ module.exports = {
   name: "fireselect",
   aliases: ["fs"],
   category: "shooting-mechanics",
-  description: "Change from semi-auto to full-auto or the oposite",
+  description: "Change from semi-auto to full-auto or the oposite. (You have less chance to hit something in full auto, but you make more damage)",
   usage: "~fireselect",
   run: async (bot,message,args) => {
     d = await utils.readData()
