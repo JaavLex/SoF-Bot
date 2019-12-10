@@ -20,16 +20,19 @@ module.exports = {
     }
 
     // Removes 30% from jamming chance
-    if (!args[0] && d[uid].Weapon != 0 && d[uid].jamchance > 35) {
+    if (!args[0] && d[uid].Weapon != 0 && d[uid].jamchance > 35 && d[uid].ACD == false) {
+        d[uid].ACD = true
+        await utils.putData(d)
 
         const msg1 = new RichEmbed()
         .setTitle("Vous démontez votre arme et nettoyez toute les pièces...")
-        .setImage("https://media.giphy.com/media/augSlqlrfrvLG/giphy.gif")
+        .setImage("")
 
         const msg = await message.channel.send(msg1)
 
         await sleep(4000)
         d[uid].jamchance = Math.floor((d[uid].jamchance -30) * 100) / 100
+        d[uid].ACD = false
         await utils.putData(d)
 
         const msg2 = new RichEmbed()
@@ -46,6 +49,8 @@ module.exports = {
       const msg1 = new RichEmbed()
       .setTitle(`Votre ${e.table[d[uid].Weapon].Name} semble encore trop propre...`)
       const msg = await message.channel.send(msg1)
+    } else if (d[uid].ACD == true) {
+
     }
   }
 }

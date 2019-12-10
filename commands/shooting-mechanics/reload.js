@@ -8,9 +8,12 @@ module.exports = {
   description: "Reload your weapon",
   usage: "~reload",
   run: async (bot,message,args) => {
+
     d = await utils.readData()
     e = await utils.readWeap()
+
     var uid = "a" + message.author.id
+
     console.log(utils.readData())
     console.log(utils.readWeap())
     console.log(d[uid].jam)
@@ -21,9 +24,11 @@ module.exports = {
 
 
     // Sets mag = 0 to the maximum capacity of the weapon type
-    if (!args[0] && d[uid].Weapon != 0) {
+    if (!args[0] && d[uid].Weapon != 0 && d[uid].ACD == false) {
+        d[uid].ACD = true
+        await utils.putData(d)
         const msg1 = new RichEmbed()
-        .setImage("https://im4.ezgif.com/tmp/ezgif-4-132cd2b4b05f.gif")
+        .setImage(e.table[d[uid].Weapon].Reload)
 
         const msg = await message.channel.send(msg1)
 
@@ -36,7 +41,10 @@ module.exports = {
 
         d[uid].Mag = e.table[d[uid].Weapon].Mag
         d[uid].MagState = "rempli"
+        d[uid].ACD = false
         await utils.putData(d)
+    } else if (d[uid].ACD == true) {
+
     } else {
       const msg1 = new RichEmbed()
       .setTitle(`Vous n'avez pas d'arme!`)

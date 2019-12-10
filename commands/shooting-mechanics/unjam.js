@@ -15,8 +15,9 @@ module.exports = {
     var uid = "a" + message.author.id
 
     // Turns jam = true to false and sends .gif imagery to represent the action
-    if (d[uid].jam == true)
+    if (d[uid].jam == true && d[uid].ACD == false)
     {
+      d[uid].ACD = true
       d[uid].jam = false
       await utils.putData(d)
 
@@ -26,16 +27,21 @@ module.exports = {
 
       const msg1 = new RichEmbed()
       .setTitle("Vous êtes en train de désenrayer votre arme...")
-      .setImage("https://im4.ezgif.com/tmp/ezgif-4-2ad5d9ec16aa.gif")
+      .setImage("https://i.ibb.co/yhD6J38/Unjam.gif")
 
       const msg = await message.channel.send(msg1)
 
-      await sleep(4000)
+      await sleep(10000)
 
       const msg2 = new RichEmbed()
       .setTitle(`Vous avez désenrayé votre ${e.table[d[uid].Weapon].Name}`)
 
+      d[uid].ACD = false
+      await utils.putData(d)
+
       msg.edit(msg2)
+    } else if (d[uid].ACD == true) {
+
     } else {
       // Can't do the command if weapon is not jammed
       const msg1 = new RichEmbed()
