@@ -97,6 +97,20 @@
       "Fullauto": false,
       "Reload": "https://i.makeagif.com/media/8-08-2016/63IeO6.gif",
       "Shoot": "https://i.ibb.co/Cz81Ykb/Reload.gif"
+    },
+    {
+      "Id": 7,
+      "Name": "FN P90",
+      "Mag": 50,
+      "Penetration": 2,
+      "Type": "SMG",
+      "T": 1,
+      "Caliber": "FN 5,7x28mm",
+      "Image":  "https://upload.wikimedia.org/wikipedia/commons/a/af/P90--.png",
+      "Range": "150m",
+      "Fullauto": true,
+      "Reload": "https://i.imgur.com/VZyHzM1.gif?noredirect",
+      "Shoot": "https://66.media.tumblr.com/b94aa83d2bec8bd85eedf9515385ab6e/tumblr_mx7ck7CvPg1r9khx4o1_400.gifv"
     }
   ]
 }

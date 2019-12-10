@@ -5,7 +5,7 @@ module.exports = {
   name: "pickw",
   aliases: ["p"],
   category: "rp-commands",
-  description: "Pick up weapon",
+  description: "Pick up weapon, or kevlar and helmet",
   usage: "~pickw <weapon>",
   run: async (bot,message,args) => {
     d = await utils.readData()
@@ -101,6 +101,63 @@ module.exports = {
               const msg6 = new RichEmbed()
               .setTitle(`Vous avez ramassé une ${e.table[6].Name}`)
               message.channel.send(msg6)
+            break;
+        case "P90":
+              if (e.table[d[uid].Weapon].T == 2) {
+                d[uid].Weapon = 7
+              } else {
+                d[uid].Weapon2 = 7
+              }
+              d[uid].Mag = e.table[7].Mag
+              d[uid].Fullauto = false
+              await utils.putData(d)
+              const msg7 = new RichEmbed()
+              .setTitle(`Vous avez ramassé une ${e.table[7].Name}`)
+              message.channel.send(msg7)
+            break;
+        case "kevlar1":
+              if (d[uid].kevlar > 0) {
+                message.channel.send("Vous portez déjà un kevlar. Enlevez le votre avant d'en porter un autre!")
+              } else {
+                d[uid].kevlar = 1
+                const msg8 = new RichEmbed()
+                .setTitle(`Vous mettez un kevlar de niveau 1`)
+                message.channel.send(msg8)
+              }
+              await utils.putData(d)
+            break;
+        case "kevlar2":
+              if (d[uid].kevlar > 0) {
+                message.channel.send("Vous portez déjà un kevlar. Enlevez le votre avant d'en porter un autre!")
+              } else {
+                d[uid].kevlar = 2
+                const msg9 = new RichEmbed()
+                .setTitle(`Vous mettez un kevlar de niveau 2`)
+                message.channel.send(msg9)
+              }
+              await utils.putData(d)
+            break;
+        case "kevlar3":
+              if (d[uid].kevlar > 0) {
+                message.channel.send("Vous portez déjà un kevlar. Enlevez le votre avant d'en porter un autre!")
+              } else {
+                d[uid].kevlar = 3
+                const msg10 = new RichEmbed()
+                .setTitle(`Vous mettez un kevlar de niveau 3`)
+                message.channel.send(msg10)
+              }
+              await utils.putData(d)
+            break;
+        case "casque":
+              if (d[uid].Helm == true) {
+                message.channel.send("Vous portez déjà un casque. Enlevez le votre avant d'en porter un autre!")
+              } else {
+                d[uid].Helm == true
+                const msg10 = new RichEmbed()
+                .setTitle(`Vous mettez un casque!`)
+                message.channel.send(msg10)
+              }
+              await utils.putData(d)
             break;
         default:
 

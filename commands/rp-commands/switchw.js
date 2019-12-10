@@ -5,7 +5,7 @@ module.exports = {
   name: "switchw",
   aliases: ["sw"],
   category: "rp-commands",
-  description: "Switch from your primary to you secondary, or holster them...",
+  description: "Switch from your primary to your secondary, or holster them...",
   usage: "~switchw [holster]",
   run: async (bot,message,args) => {
     d = await utils.readData()
