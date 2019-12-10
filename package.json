@@ -1,6 +1,6 @@
 {
   "name": "SoF-Bot",
-  "version": "0.1",
+  "version": "1.0",
   "description": "A discord bot that tells you when your next train departs.",
   "main": "index.js",
   "scripts": {

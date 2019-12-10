@@ -22,7 +22,7 @@ module.exports = {
             const msg1 = new RichEmbed()
             .setTitle(`Vous enlevez votre kevlar de niveau ${d[uid].kevlar}...`)
             message.channel.send(msg1)
-            d[uid].kevlar == 0
+            d[uid].kevlar = 0
             await utils.putData(d)
           } else {
             message.channel.send("Vous n'avez déjà pas de kevlar!")
@@ -33,7 +33,7 @@ module.exports = {
             const msg2 = new RichEmbed()
             .setTitle(`Vous enlevez votre casque...`)
             message.channel.send(msg2)
-            d[uid].Helm == false
+            d[uid].Helm = false
             await utils.putData(d)
           } else {
             message.channel.send("Vous n'avez déjà pas de casque!")

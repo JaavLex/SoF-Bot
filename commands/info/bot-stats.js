@@ -12,7 +12,7 @@ module.exports = {
       .addField("Servercount :", `**${client.guilds.size}**`, true)
       .addField("Usercount :", `**${client.users.size}**`, true)
       .addField("Text channels :", `**${client.channels.filter(c => c.type === 'text').size}**`, true)
-      .addField("Bot Version :" , "v0.1")
+      .addField("Bot Version :" , "v1.0")
       .addBlankField()
       .addField("Bot creator info :", `TacticsCH#2795`, true)
       .addField("GitHub :", `https://github.com/tacticsch/`, true)

@@ -51,7 +51,7 @@ module.exports = {
 
           const msg2 = new RichEmbed()
           .setTitle(`Votre arme est en ` + firestate)
-          .setImage("")
+          .setImage("https://www.thefirearmblog.com/blog/wp-content/uploads/2016/07/unnamed.gif")
 
           msg.edit(msg2)
         } else if (e.table[d[uid].Weapon].Fullauto == false){

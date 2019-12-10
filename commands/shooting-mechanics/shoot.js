@@ -38,11 +38,11 @@ module.exports = {
   async function HitorMiss(str, target, img){
     var bullets = 0
     var mess = ``
-
+    var img1 = e.table[d[uid].Weapon].Shoot;
     if (d[uid].Fullauto == true)
     {
       var nbb = Math.floor(((Math.floor(Math.random() * 99) + 1) /2) /10);
-      var img1 = e.table[d[uid].Weapon].Shoot;
+
       for (var i = 0; i <= nbb; i++)
       {
         if (i < d[uid].Mag) {
@@ -80,7 +80,7 @@ module.exports = {
 
     const msg = await message.channel.send(msg1)
 
-    await sleep(700)
+    await sleep(4000)
 
     const msg2 = new RichEmbed()
     .setTitle(str + target)
